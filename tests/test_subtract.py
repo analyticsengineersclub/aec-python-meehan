@@ -8,6 +8,6 @@ class TestSubtract(unittest.TestCase): # Test class → this is the "wrapper" to
         sub_result = aec_subtract(arg_ints)  # Apply a function
         self.assertEqual(sub_result, 15) # Asserts that the function above produces the expected result (20 - 5 = 15)
     
-    # If this test is run as a script (ie. 'python test_subtract.py'), execute the given tasks
-    if __name__ == "__main__": 
-        unittest.main()
+# If this test is run as a script (ie. 'python test_subtract.py'), execute the given tasks
+if __name__ == "__main__": 
+    unittest.main()

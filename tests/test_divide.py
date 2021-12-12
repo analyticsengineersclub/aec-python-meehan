@@ -8,5 +8,5 @@ class TestDivide(unittest.TestCase):
         div_result = aec_divide(arg_ints)
         self.assertEqual(div_result, 4)
     
-    if __name__ == "__main__": 
-        unittest.main()
+if __name__ == "__main__": 
+    unittest.main()
