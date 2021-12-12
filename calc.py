@@ -13,9 +13,16 @@ add = subparsers.add_parser("add", help = "add integers")
 add.add_argument("ints_to_sum", nargs='*', type=int)
 
 sub = subparsers.add_parser("sub", help = "subtract integers")
-sub.add_argument("ints_to_subtract", nargs=2, type=int)
+sub.add_argument("ints_to_subtract", nargs='+', type=int)
 
 def aec_subtract(ints_to_subtract):
+    if len(ints_to_subtract) > 2:
+        raise Exception("Too many arguments")
+
+        # Raising an exception propogates out of nested scopes until an exception handler is encountered
+        # The default except handling by the interpreter is to print an error message and a tracxeback summary for debugging purposes
+        # & exit the code
+                
     our_sub = ints_to_subtract[0] - ints_to_subtract[1]
     if our_sub < 0:
         our_sub = 0
@@ -26,9 +33,12 @@ multiply = subparsers.add_parser("multiply", help = "multiply integers")
 multiply.add_argument("ints_to_multiply", nargs='+', type=int)
 
 divide = subparsers.add_parser("divide", help = "divide integers")
-divide.add_argument("ints_to_divide", nargs=2, type=int)
+divide.add_argument("ints_to_divide", nargs='+', type=int)
 
 def aec_divide(ints_to_divide):
+    if len(ints_to_divide) > 2:
+        raise Exception("Too many arguments")
+
     if ints_to_divide[1] == 0:
         our_quotient = 0
     else:
