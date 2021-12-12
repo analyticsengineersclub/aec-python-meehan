@@ -26,6 +26,11 @@ multiply.add_argument("ints_to_multiply", nargs='+', type=int)
 divide = subparsers.add_parser("divide", help = "divide integers")
 divide.add_argument("ints_to_divide", nargs=2, type=int)
 
+def aec_divide(ints_to_divide):
+    our_quotient = ints_to_divide[0] / ints_to_divide[1]
+    print(f"the quotient of values is: {our_quotient}")
+    return(our_quotient) 
+
 # Nesting everyythin under this ensures that this code isn't run during tests
 # & instead only runs when called on from the CLI
 # Without this, an error would be thrown when tests are run because it would be looking for an argument (ie. add, sub, multiply, divide)
@@ -52,5 +57,6 @@ if __name__ == "__main__":
         if args.ints_to_divide[1] == 0:
             print("Cannot divide by 0")
         else:
-            our_quotient = args.ints_to_divide[0] / args.ints_to_divide[1]
-            print(f"the quotient of values is: {our_quotient}")
+            # our_quotient = args.ints_to_divide[0] / args.ints_to_divide[1]
+            # print(f"the quotient of values is: {our_quotient}")
+            aec_divide(args.ints_to_divide)
