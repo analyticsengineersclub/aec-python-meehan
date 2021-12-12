@@ -29,7 +29,10 @@ divide = subparsers.add_parser("divide", help = "divide integers")
 divide.add_argument("ints_to_divide", nargs=2, type=int)
 
 def aec_divide(ints_to_divide):
-    our_quotient = ints_to_divide[0] / ints_to_divide[1]
+    if ints_to_divide[1] == 0:
+        our_quotient = 0
+    else:
+        our_quotient = ints_to_divide[0] / ints_to_divide[1]
     print(f"the quotient of values is: {our_quotient}")
     return(our_quotient) 
 
