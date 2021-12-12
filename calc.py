@@ -17,6 +17,8 @@ sub.add_argument("ints_to_subtract", nargs=2, type=int)
 
 def aec_subtract(ints_to_subtract):
     our_sub = ints_to_subtract[0] - ints_to_subtract[1]
+    if our_sub < 0:
+        our_sub = 0
     print(f"the difference between values is: {our_sub}")
     return(our_sub)
 
